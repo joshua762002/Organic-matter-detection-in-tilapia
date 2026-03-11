@@ -89,3 +89,19 @@ VALUES
 (3, 'staff', 'Staff created a new detection record'),
 (1, 'admin', 'Admin viewed dashboard'),
 (2, 'manager', 'Manager viewed pond map and status');
+
+
+CREATE TABLE admin_notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sample_code VARCHAR(50) NOT NULL,
+    full_name VARCHAR(100),       
+    pond_name VARCHAR(50),        
+    organic_level FLOAT,
+    water_temperature FLOAT,
+    ph_level FLOAT,
+    status VARCHAR(20) NOT NULL,
+    detected_at DATETIME NOT NULL,
+    created_by INT,
+    is_read TINYINT(1) DEFAULT 0,
+    FOREIGN KEY (created_by) REFERENCES users(user_id)
+);
