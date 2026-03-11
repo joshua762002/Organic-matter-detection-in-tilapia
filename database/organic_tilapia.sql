@@ -81,3 +81,11 @@ CREATE TABLE activity_logs (
     log_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+
+INSERT INTO activity_logs (user_id, role, action)
+VALUES
+(1, 'admin', 'Admin logged into the system'),
+(3, 'staff', 'Staff logged into the system'),
+(3, 'staff', 'Staff created a new detection record'),
+(1, 'admin', 'Admin viewed dashboard'),
+(2, 'manager', 'Manager viewed pond map and status');
