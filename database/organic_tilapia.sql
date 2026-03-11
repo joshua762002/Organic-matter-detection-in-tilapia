@@ -67,3 +67,9 @@ CREATE TABLE alerts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (detection_id) REFERENCES detections(detection_id)
 );
+
+INSERT INTO alerts (detection_id, alert_message, alert_level)
+VALUES
+(2, 'High Organic Matter detected in SAMPLE-002. Water change recommended.', 'High');
+
+
