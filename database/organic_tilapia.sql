@@ -73,3 +73,11 @@ VALUES
 (2, 'High Organic Matter detected in SAMPLE-002. Water change recommended.', 'High');
 
 
+CREATE TABLE activity_logs (
+    log_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    role ENUM('admin','manager','staff'),
+    action TEXT,
+    log_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
