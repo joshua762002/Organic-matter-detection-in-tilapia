@@ -11,3 +11,12 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_login TIMESTAMP NULL
 );
+
+INSERT INTO users (username, password, full_name, role)
+VALUES
+('admin', '1234', 'System Administrator', 'admin'),
+('manager1', '1234', 'Maria Santos', 'manager'),
+('staff1', '1234', 'Juan Dela Cruz', 'staff'),
+('staff2', '1234', 'Pedro Reyes', 'staff'),
+('staff3', '1234', 'Linda walker', 'staff'),
+('staff4', '1234', 'Coco martin', 'staff');
