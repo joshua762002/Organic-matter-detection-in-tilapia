@@ -20,3 +20,13 @@ VALUES
 ('staff2', '1234', 'Pedro Reyes', 'staff'),
 ('staff3', '1234', 'Linda walker', 'staff'),
 ('staff4', '1234', 'Coco martin', 'staff');
+
+CREATE TABLE ponds (
+    pond_id INT AUTO_INCREMENT PRIMARY KEY,
+    pond_name VARCHAR(50),
+    latitude DECIMAL(9,6),
+    longitude DECIMAL(9,6),
+    status ENUM('Safe','Moderate','High') DEFAULT 'Safe',
+    last_reading DECIMAL(5,2),
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
