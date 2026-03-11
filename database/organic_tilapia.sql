@@ -30,3 +30,9 @@ CREATE TABLE ponds (
     last_reading DECIMAL(5,2),
     last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO ponds (pond_name, latitude, longitude, status, last_reading)
+VALUES
+('Pond A', 14.657000, 120.986000, 'Safe', 35.5),
+('Pond B', 14.659000, 120.990000, 'High', 78.2),
+('Pond C', 14.661000, 120.992000, 'Moderate', 45.1);
