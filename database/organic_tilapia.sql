@@ -36,3 +36,18 @@ VALUES
 ('Pond A', 14.657000, 120.986000, 'Safe', 35.5),
 ('Pond B', 14.659000, 120.990000, 'High', 78.2),
 ('Pond C', 14.661000, 120.992000, 'Moderate', 45.1);
+
+
+CREATE TABLE detections (
+    detection_id INT AUTO_INCREMENT PRIMARY KEY,
+    pond_id INT,
+    sample_code VARCHAR(50) NOT NULL,
+    organic_level DECIMAL(5,2) NOT NULL,
+    water_temperature DECIMAL(5,2),
+    ph_level DECIMAL(4,2),
+    status ENUM('Safe','Moderate','High'),
+    created_by INT,
+    detected_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (pond_id) REFERENCES ponds(pond_id),
+    FOREIGN KEY (created_by) REFERENCES users(user_id)
+);
