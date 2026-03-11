@@ -57,3 +57,13 @@ VALUES
 (1, 'SAMPLE-001', 35.50, 28.4, 7.5, 'Safe', 3),
 (2, 'SAMPLE-002', 78.20, 30.1, 6.8, 'High', 4),
 (3, 'SAMPLE-003', 45.10, 27.9, 7.2, 'Moderate', 3);
+
+
+CREATE TABLE alerts (
+    alert_id INT AUTO_INCREMENT PRIMARY KEY,
+    detection_id INT NOT NULL,
+    alert_message VARCHAR(255),
+    alert_level ENUM('Low','Medium','High'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (detection_id) REFERENCES detections(detection_id)
+);
