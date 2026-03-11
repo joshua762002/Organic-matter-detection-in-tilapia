@@ -51,3 +51,9 @@ CREATE TABLE detections (
     FOREIGN KEY (pond_id) REFERENCES ponds(pond_id),
     FOREIGN KEY (created_by) REFERENCES users(user_id)
 );
+
+INSERT INTO detections (pond_id, sample_code, organic_level, water_temperature, ph_level, status, created_by)
+VALUES
+(1, 'SAMPLE-001', 35.50, 28.4, 7.5, 'Safe', 3),
+(2, 'SAMPLE-002', 78.20, 30.1, 6.8, 'High', 4),
+(3, 'SAMPLE-003', 45.10, 27.9, 7.2, 'Moderate', 3);
